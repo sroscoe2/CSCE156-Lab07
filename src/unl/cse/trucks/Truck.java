@@ -103,7 +103,7 @@ public class Truck {
 
         String licensePlate = RandomStringUtils.randomAlphabetic(3) + " "
                 + RandomStringUtils.randomNumeric(3);
-        java.util.Random randomNumberGenerator = new java.util.Random(12345678);
+        java.util.Random randomNumberGenerator = new java.util.Random(System.currentTimeMillis());
 
         int carryingCapacity = Truck.CARRYINGCAPACITY_MIN+randomNumberGenerator.nextInt(Truck.CARRYINGCAPACITY_MAX-Truck.CARRYINGCAPACITY_MIN);
         
