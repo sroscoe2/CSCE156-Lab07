@@ -1,9 +1,7 @@
-package unl.cse.test;
+package unl.cse.trucks;
 
 import org.junit.jupiter.api.BeforeEach;
-
-import unl.cse.trucks.Truck;
-import unl.cse.trucks.TruckList;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -18,7 +16,7 @@ class TruckListTests {
         testList = new TruckList();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getSizeAddToStart() {
         Truck testElement = Truck.createRandomTruck();
         for (int i = 0; i < 10; i++) {
@@ -27,7 +25,7 @@ class TruckListTests {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getSizeAddToEnd() {
         Truck testElement = Truck.createRandomTruck();
         for (int i = 0; i < 10; i++) {
@@ -36,7 +34,7 @@ class TruckListTests {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getSizeRemove() {
         Truck testElement = Truck.createRandomTruck();
         for (int i = 0; i < 10; i++) {
@@ -50,7 +48,7 @@ class TruckListTests {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void clear() {
         assertEquals(0, testList.getSize());
         testList.clear();
@@ -59,7 +57,7 @@ class TruckListTests {
         testList.addToStart(Truck.createRandomTruck());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void addToStart() {
         for (int i = 0; i < 10; i++) {
             Truck testElement = Truck.createRandomTruck();
@@ -68,7 +66,7 @@ class TruckListTests {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void addToEnd() {
         for (int i = 0; i < 10; i++) {
             Truck testElement = Truck.createRandomTruck();
@@ -77,7 +75,7 @@ class TruckListTests {
         }
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void remove() {
         Truck[] testElements = {Truck.createRandomTruck(), Truck.createRandomTruck(), Truck.createRandomTruck(),
                 Truck.createRandomTruck(), Truck.createRandomTruck()};
@@ -119,7 +117,7 @@ class TruckListTests {
         assertEquals(0, testList.getSize());
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getTruck() {
         Truck[] testElements = {Truck.createRandomTruck(), Truck.createRandomTruck(), Truck.createRandomTruck(),
                 Truck.createRandomTruck(), Truck.createRandomTruck()};
