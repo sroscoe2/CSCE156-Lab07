@@ -189,4 +189,49 @@ public class Truck {
 
     }
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + carryingCapacity;
+		result = prime * result + horsePower;
+		result = prime * result + ((licensePlate == null) ? 0 : licensePlate.hashCode());
+		result = prime * result + ((transmission == null) ? 0 : transmission.hashCode());
+		result = prime * result + wheelBase;
+		result = prime * result + wheelCut;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Truck other = (Truck) obj;
+		if (carryingCapacity != other.carryingCapacity)
+			return false;
+		if (horsePower != other.horsePower)
+			return false;
+		if (licensePlate == null) {
+			if (other.licensePlate != null)
+				return false;
+		} else if (!licensePlate.equals(other.licensePlate))
+			return false;
+		if (transmission == null) {
+			if (other.transmission != null)
+				return false;
+		} else if (!transmission.equals(other.transmission))
+			return false;
+		if (wheelBase != other.wheelBase)
+			return false;
+		if (wheelCut != other.wheelCut)
+			return false;
+		return true;
+	}
+    
+    
+
 }
