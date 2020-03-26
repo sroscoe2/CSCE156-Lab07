@@ -1,8 +1,11 @@
 package unl.cse.trucks;
 
+import java.util.LinkedList;
+
 public class TruckList {
 	
 	//TODO: add the head of your list here
+	LinkedList<Truck> t = new LinkedList<>();
 
 	/**
 	 * This function returns the size of the list, the number of
@@ -10,7 +13,7 @@ public class TruckList {
 	 * @return
 	 */
 	public int getSize() { 
-    	throw new UnsupportedOperationException("Not yet implemented.");
+		return this.t.size();
 	}
 
 	/**
@@ -18,7 +21,7 @@ public class TruckList {
 	 * empty list.
 	 */
     public void clear() {
-    	throw new UnsupportedOperationException("Not yet implemented.");
+    	this.t.clear();
     }
 
     /**
@@ -27,7 +30,7 @@ public class TruckList {
      * @param t
      */
     public void addToStart(Truck t) {
-    	throw new UnsupportedOperationException("Not yet implemented.");
+    	this.t.add(0, t);
     }
 
     /**
@@ -36,7 +39,7 @@ public class TruckList {
      * @param t
      */
     public void addToEnd(Truck t) {
-    	throw new UnsupportedOperationException("Not yet implemented.");
+    	this.t.add(t);
     }
 
     /**
@@ -46,7 +49,7 @@ public class TruckList {
      * @param position
      */
     public void remove(int position) {
-    	throw new UnsupportedOperationException("Not yet implemented.");
+    	this.t.remove(position);
     }
     
     /**
@@ -67,14 +70,14 @@ public class TruckList {
      * @return
      */
     public Truck getTruck(int position) {
-    	throw new UnsupportedOperationException("Not yet implemented.");    	
+    	return this.t.get(position);
     }
 
     /**
      * Prints this list to the standard output.
      */
     public void print() {
-    	throw new UnsupportedOperationException("Not yet implemented.");
+    	System.out.println(this.t);
     }
 
 }
