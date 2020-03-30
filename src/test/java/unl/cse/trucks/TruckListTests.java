@@ -7,15 +7,28 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Random;
 
-class TruckListTests {
+/**
+ * A JUnit test suite of test cases for the {@link TruckList} 
+ * linked list implementation.
+ *
+ */
+public class TruckListTests {
 
     private TruckList testList;
 
+    /**
+     * Initializes a new {@link TruckList} 
+     */
     @BeforeEach
     void setUp() {
         testList = new TruckList();
     }
 
+    /**
+     * Tests that the {@link TruckList#getSize()} is correct after 
+     * inserting a new {@link Truck} with the 
+     * {@link TruckList#addToStart(Truck)} method. 
+     */
     @Test
     void getSizeAddToStart() {
         Truck testElement = Truck.createRandomTruck();
@@ -25,6 +38,11 @@ class TruckListTests {
         }
     }
 
+    /**
+     * Tests that the {@link TruckList#getSize()} is correct after 
+     * inserting a new {@link Truck} with the 
+     * {@link TruckList#addToEnd(Truck)} method. 
+     */
     @Test
     void getSizeAddToEnd() {
         Truck testElement = Truck.createRandomTruck();
@@ -34,6 +52,11 @@ class TruckListTests {
         }
     }
 
+    /**
+     * Tests that the {@link TruckList#getSize()} is correct after 
+     * removing a {@link Truck} with the {@link TruckList#remove(int)} 
+     * method. 
+     */
     @Test
     void getSizeRemove() {
         Truck testElement = Truck.createRandomTruck();
@@ -48,6 +71,11 @@ class TruckListTests {
         }
     }
 
+    /**
+     * Tests that the {@link TruckList#getSize()} is correct after 
+     * clearing out the list using the {@link TruckList#clear()} 
+     * method. 
+     */
     @Test
     void clear() {
         assertEquals(0, testList.getSize());
@@ -57,6 +85,9 @@ class TruckListTests {
         testList.addToStart(Truck.createRandomTruck());
     }
 
+    /**
+     * Tests that the {@link TruckList#addToStart(Truck)} is correct. 
+     */
     @Test
     void addToStart() {
         for (int i = 0; i < 10; i++) {
@@ -66,6 +97,9 @@ class TruckListTests {
         }
     }
 
+    /**
+     * Tests that the {@link TruckList#addToEnd(Truck)} is correct. 
+     */
     @Test
     void addToEnd() {
         for (int i = 0; i < 10; i++) {
@@ -75,6 +109,9 @@ class TruckListTests {
         }
     }
 
+    /**
+     * Tests that the {@link TruckList#remove(int)} is correct. 
+     */
     @Test
     void remove() {
         Truck[] testElements = {Truck.createRandomTruck(), Truck.createRandomTruck(), Truck.createRandomTruck(),
@@ -117,6 +154,9 @@ class TruckListTests {
         assertEquals(0, testList.getSize());
     }
 
+    /**
+     * Tests that the {@link TruckList#getTruck(int)} is correct. 
+     */
     @Test
     void getTruck() {
         Truck[] testElements = {Truck.createRandomTruck(), Truck.createRandomTruck(), Truck.createRandomTruck(),
