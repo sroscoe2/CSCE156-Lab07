@@ -39,7 +39,7 @@ public class TruckListTests {
         for (Field field : fields) {
             field.setAccessible(true);
             try {
-                collectionField |= Collection.class.isAssignableFrom(field.getType()) || (field.getType() == Object.class &&  field.get(testList) instanceof Collection);
+                collectionField |= field.get(testList) instanceof Collection;
             } catch (IllegalAccessException|IllegalArgumentException ignored) {}
             
             nodeField |= field.getType() == TruckListNode.class;
