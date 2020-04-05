@@ -4,7 +4,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
+import java.lang.reflect.Field;
+import java.util.Collection;
 import java.util.Random;
 
 /**
@@ -22,6 +26,22 @@ public class TruckListTests {
     @BeforeEach
     void setUp() {
         testList = new TruckList();
+    }
+    
+    /**
+     * Check you're actually doing the assignment...
+     */
+    @Test
+    void noCheatingTest() {
+        Field[] fields = testList.getClass().getDeclaredFields();
+        boolean collectionField = false;
+        boolean nodeField = false;
+        for (Field field : fields) {
+            collectionField |= Collection.class.isAssignableFrom(field.getType());
+            nodeField |= field.getType() == TruckListNode.class;
+        }
+        assertTrue(nodeField, "You need to have at least one node in your class's objects");
+        assertFalse(collectionField, "No using preexisting Collections...");
     }
 
     /**
