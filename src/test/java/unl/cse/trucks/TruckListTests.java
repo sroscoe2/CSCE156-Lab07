@@ -37,7 +37,11 @@ public class TruckListTests {
         boolean collectionField = false;
         boolean nodeField = false;
         for (Field field : fields) {
-            collectionField |= Collection.class.isAssignableFrom(field.getType());
+            field.setAccessible(true);
+            try {
+                collectionField |= Collection.class.isAssignableFrom(field.getType()) || (field.getType() == Object.class &&  field.get(testList) instanceof Collection);
+            } catch (IllegalAccessException|IllegalArgumentException ignored) {}
+            
             nodeField |= field.getType() == TruckListNode.class;
         }
         assertTrue(nodeField, "You need to have at least one node in your class's objects");
