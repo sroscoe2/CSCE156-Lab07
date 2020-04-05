@@ -33,11 +33,19 @@ public class TruckListTests {
      */
     @Test
     void noCheatingTest() {
+        // Prevent hiding the list by creating on add
+        testList.addToEnd(Truck.createRandomTruck());
+        testList.addToEnd(Truck.createRandomTruck());
+        
         Field[] fields = testList.getClass().getDeclaredFields();
         boolean collectionField = false;
         boolean nodeField = false;
         for (Field field : fields) {
-            collectionField |= Collection.class.isAssignableFrom(field.getType());
+            field.setAccessible(true);
+            try {
+                collectionField |= field.get(testList) instanceof Collection;
+            } catch (IllegalAccessException|IllegalArgumentException ignored) {}
+            
             nodeField |= field.getType() == TruckListNode.class;
         }
         assertTrue(nodeField, "You need to have at least one node in your class's objects");
