@@ -33,6 +33,10 @@ public class TruckListTests {
      */
     @Test
     void noCheatingTest() {
+        // Prevent hiding the list by creating on add
+        testList.addToEnd(Truck.createRandomTruck());
+        testList.addToEnd(Truck.createRandomTruck());
+        
         Field[] fields = testList.getClass().getDeclaredFields();
         boolean collectionField = false;
         boolean nodeField = false;
