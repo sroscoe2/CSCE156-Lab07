@@ -18,6 +18,12 @@ public class Truck {
     public static final int WHEELCUT_MIN = 40;
     public static final int WHEELCUT_MAX = 50;
     
+    /**
+     * An inner static class that supports the 
+     * <a href="https://en.wikipedia.org/wiki/Builder_pattern">Builder Pattern</a>
+     * so that instances can be easily created
+     * 
+     */
     public static class Builder {
     	private String licensePlate;
         private int carryingCapacity;
