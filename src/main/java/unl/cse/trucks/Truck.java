@@ -1,7 +1,5 @@
 package unl.cse.trucks;
 
-import unl.cse.utils.RandomStringUtils;
-
 /**
  * A Truck object
  *

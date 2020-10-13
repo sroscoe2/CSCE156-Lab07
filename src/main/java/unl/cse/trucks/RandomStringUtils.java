@@ -1,4 +1,4 @@
-package unl.cse.utils;
+package unl.cse.trucks;
 
 /**
  * Copyright 2002-2004 The Apache Software Foundation.
@@ -280,4 +280,4 @@ public abstract class RandomStringUtils {
         }
         return random(count, 0, chars.length, false, false, chars, RANDOM);
     }
-}//end of class
+}
