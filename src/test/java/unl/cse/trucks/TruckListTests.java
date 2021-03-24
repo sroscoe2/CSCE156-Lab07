@@ -1,7 +1,7 @@
 package unl.cse.trucks;
 
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -24,7 +24,7 @@ public class TruckListTests {
      * Initializes a new {@link TruckList}
      */
     @BeforeEach
-    void setUp() {
+    public void setUp() {
         testList = new TruckList();
     }
     
@@ -32,7 +32,7 @@ public class TruckListTests {
      * Check you're actually doing the assignment...
      */
     @Test
-    void noCheatingTest() {
+    public void noCheatingTest() {
         // Prevent hiding the list by creating on add
         testList.addToEnd(Truck.createRandomTruck());
         testList.addToEnd(Truck.createRandomTruck());
@@ -58,7 +58,7 @@ public class TruckListTests {
      * {@link TruckList#addToStart(Truck)} method.
      */
     @Test
-    void getSizeAddToStart() {
+    public void getSizeAddToStart() {
         Truck testElement = Truck.createRandomTruck();
         for (int i = 0; i < 10; i++) {
             assertEquals(i, testList.getSize(), String.format("Added %d elements to the start of the truck list and size() returned %d", i, testList.getSize()));
@@ -72,7 +72,7 @@ public class TruckListTests {
      * {@link TruckList#addToEnd(Truck)} method.
      */
     @Test
-    void getSizeAddToEnd() {
+    public void getSizeAddToEnd() {
         Truck testElement = Truck.createRandomTruck();
         for (int i = 0; i < 10; i++) {
             assertEquals(i, testList.getSize(), String.format("Added %d elements to the end of the truck list and size() returned %d", i, testList.getSize()));
@@ -86,7 +86,7 @@ public class TruckListTests {
      * method.
      */
     @Test
-    void getSizeRemove() {
+    public void getSizeRemove() {
         Truck testElement = Truck.createRandomTruck();
         for (int i = 0; i < 10; i++) {
             testList.addToStart(testElement);
@@ -105,7 +105,7 @@ public class TruckListTests {
      * method.
      */
     @Test
-    void clear() {
+    public void clear() {
         assertEquals(0, testList.getSize(), "Lists should start empty");
         testList.clear();
         assertEquals(0, testList.getSize(), "Clearing should empty a list");
@@ -119,7 +119,7 @@ public class TruckListTests {
      * Tests that the {@link TruckList#addToStart(Truck)} is correct.
      */
     @Test
-    void addToStart() {
+    public void addToStart() {
         for (int i = 0; i < 10; i++) {
             Truck testElement = Truck.createRandomTruck();
             testList.addToStart(testElement);
@@ -131,7 +131,7 @@ public class TruckListTests {
      * Tests that the {@link TruckList#addToEnd(Truck)} is correct.
      */
     @Test
-    void addToEnd() {
+    public void addToEnd() {
         for (int i = 0; i < 10; i++) {
             Truck testElement = Truck.createRandomTruck();
             testList.addToEnd(testElement);
@@ -143,7 +143,7 @@ public class TruckListTests {
      * Tests that the {@link TruckList#remove(int)} is correct.
      */
     @Test
-    void remove() {
+    public void remove() {
         Truck[] testElements = {Truck.createRandomTruck(), Truck.createRandomTruck(), Truck.createRandomTruck(),
                 Truck.createRandomTruck(), Truck.createRandomTruck()};
 
@@ -188,7 +188,7 @@ public class TruckListTests {
      * Tests that the {@link TruckList#getTruck(int)} is correct.
      */
     @Test
-    void getTruck() {
+    public void getTruck() {
         Truck[] testElements = {Truck.createRandomTruck(), Truck.createRandomTruck(), Truck.createRandomTruck(),
                 Truck.createRandomTruck(), Truck.createRandomTruck()};
 
