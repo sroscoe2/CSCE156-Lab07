@@ -49,7 +49,7 @@ instructions on how to clone a project from GitHub.
 
 ## 2. Linked Lists
 
-List ADTs provide functionality for dealing with collections of objects
+List Abstract Data Types (ADT) provide functionality for dealing with collections of objects
 in an object-oriented manner. In contrast to "static" arrays that have a
 fixed size and require the client code to do the necessary "bookkeeping"
 of the array, a List ADT provides an interface to dynamically add,
